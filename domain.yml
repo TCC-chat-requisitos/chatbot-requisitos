@@ -2,33 +2,40 @@ version: "3.1"
 
 intents:
   - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - affirm_user_knows_user_story
+  - affirm_user_understood_user_story
+  - deny_user_knows_user_story
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hello! I'm a bot."
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_explain_objective:
+  - text: "I'm here to help you create a User Story."
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_ask_if_user_knows_user_story:
+  - text: "Do you know what a User Story is?"
+    buttons:
+    - title: "Yes"
+      payload: "I do know what a User Story is"
+    - title: "No"
+      payload: "No, I don't know what a User Story is"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_ask_if_user_understood_explanation:
+  - text: "Did you understand what a User Story is?"
+    buttons:
+    - title: "Yes"
+      payload: "I understood what a User Story is"
+    - title: "No"
+      payload: "No, I don't understood what a User Story is"
 
-  utter_goodbye:
-  - text: "Bye"
+  utter_explain_user_story:
+  - text: "A User Story is a tool used in Agile software development to capture a description of a software feature from an end-user perspective. The user story describes the type of user, what they want and why. A user story helps to create a simplified description of a requirement."
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_cheers:
+  - text: "Great! Let's get started."
+
 
 session_config:
-  session_expiration_time: 60
+  session_expiration_time: 300
   carry_over_slots_to_new_session: true
