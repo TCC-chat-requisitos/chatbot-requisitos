@@ -3,8 +3,9 @@ version: "3.1"
 intents:
   - greet
   - affirm_user_knows_user_story
-  - affirm_user_understood_user_story
   - deny_user_knows_user_story
+  - start_extracting_user_story_title
+  - type_user_story_title
 
 responses:
   utter_greet:
@@ -32,9 +33,36 @@ responses:
   utter_explain_user_story:
   - text: "A User Story is a tool used in Agile software development to capture a description of a software feature from an end-user perspective. The user story describes the type of user, what they want and why. A user story helps to create a simplified description of a requirement."
 
-  utter_cheers:
-  - text: "Great! Let's get started."
+  utter_move_to_title_step:
+  - text: "Great! Let's get started with the title?"
+    buttons:
+      - title: "Yes"
+        payload: "Yes, let's get started with the title"
 
+  utter_ask_for_title:
+  - text: "Please, tell me the title of the User Story"
+
+  utter_confirm_title:
+  - text: "The title of the User Story is {user_storie_title}. Is that correct?"
+    buttons:
+      - title: "Yes"
+        payload: "Yes, the title is correct"
+      - title: "No"
+        payload: "No, the title is not correct"
+
+entities:
+- user_storie
+
+slots:
+  user_storie_title:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: user_storie
+
+actions:
+  - action_save_user_storie_title
 
 session_config:
   session_expiration_time: 300

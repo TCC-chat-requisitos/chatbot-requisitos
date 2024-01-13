@@ -11,10 +11,18 @@ stories:
   - story: "User knows User Story"
     steps:
       - intent: affirm_user_knows_user_story
-      - action: utter_cheers
+      - action: utter_move_to_title_step
 
   - story: "User don't knows User Story"
     steps:
       - intent: deny_user_knows_user_story
       - action: utter_explain_user_story
       - action: utter_ask_if_user_understood_explanation
+
+  - story: "Extract User Story Title"
+    steps:
+      - intent: start_extracting_user_story_title
+      - action: utter_ask_for_title
+      - intent: type_user_story_title
+      - action: action_save_user_storie_title
+      - action: utter_confirm_title

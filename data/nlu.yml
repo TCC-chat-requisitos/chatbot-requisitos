@@ -24,3 +24,11 @@ nlu:
     examples: |
       - No, I don't know what a User Story is
       - No, I don't understood what a User Story is
+
+  - intent: start_extracting_user_story_title
+    examples: |
+      - Yes, let's get started with the title
+
+  - intent: type_user_story_title
+    examples: |
+        - xing xing xing xing
