@@ -28,7 +28,3 @@ nlu:
   - intent: start_extracting_user_story_title
     examples: |
       - Yes, let's get started with the title
-
-  - intent: type_user_story_title
-    examples: |
-        - xing xing xing xing

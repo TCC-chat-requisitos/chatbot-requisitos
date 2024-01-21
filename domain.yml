@@ -5,7 +5,6 @@ intents:
   - affirm_user_knows_user_story
   - deny_user_knows_user_story
   - start_extracting_user_story_title
-  - type_user_story_title
 
 responses:
   utter_greet:
@@ -43,26 +42,27 @@ responses:
   - text: "Please, tell me the title of the User Story"
 
   utter_confirm_title:
-  - text: "The title of the User Story is {user_storie_title}. Is that correct?"
+  - text: "The title of the User Story is {user_story_title}. Is that correct?"
     buttons:
       - title: "Yes"
         payload: "Yes, the title is correct"
       - title: "No"
         payload: "No, the title is not correct"
 
-entities:
-- user_storie
+forms:
+  user_story_form:
+    required_slots:
+      - user_story_title
 
 slots:
-  user_storie_title:
+  user_story_title:
     type: text
-    influence_conversation: false
+    influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: user_storie
-
-actions:
-  - action_save_user_storie_title
+    - type: from_text
+      conditions:
+      - active_loop: user_story_form
+        requested_slot: user_story_title
 
 session_config:
   session_expiration_time: 300

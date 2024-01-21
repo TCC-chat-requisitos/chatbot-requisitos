@@ -23,6 +23,9 @@ stories:
     steps:
       - intent: start_extracting_user_story_title
       - action: utter_ask_for_title
-      - intent: type_user_story_title
-      - action: action_save_user_storie_title
+      - action: user_story_form
+      - active_loop: user_story_form
+      - slot_was_set:
+        - requested_slot: user_story_title
+      - active_loop: null
       - action: utter_confirm_title
