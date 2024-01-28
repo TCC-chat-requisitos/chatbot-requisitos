@@ -1,5 +1,10 @@
 version: "3.1"
 
+actions:
+  - action_reset_user_story_title
+  - action_reset_user_story_description
+  - action_reset_user_story_acceptance_criteria
+
 intents:
   - greet
   - agree

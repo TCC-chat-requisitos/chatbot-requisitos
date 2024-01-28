@@ -4,6 +4,7 @@ rules:
   - rule: "Extract User Story Title"
     steps:
       - intent: start_title_extraction
+      - action: action_reset_user_story_title
       - action: utter_ask_to_type_user_story_title
       - action: title_form
       - active_loop: title_form
@@ -16,6 +17,7 @@ rules:
   - rule: "Extract User Story Description"
     steps:
       - intent: start_description_extraction
+      - action: action_reset_user_story_description
       - action: utter_ask_to_type_user_story_description
       - action: description_form
       - active_loop: description_form
@@ -28,6 +30,7 @@ rules:
   - rule: "Extract User Story Acceptance Criteria"
     steps:
       - intent: start_acceptance_criteria_extraction
+      - action: action_reset_user_story_acceptance_criteria
       - action: utter_ask_to_type_user_story_acceptance_criteria
       - action: acceptance_criteria_form
       - active_loop: acceptance_criteria_form
