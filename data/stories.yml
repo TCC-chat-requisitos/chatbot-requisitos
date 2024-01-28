@@ -1,31 +1,82 @@
 version: "3.1"
 
 stories:
-  - story: "Explain Objective"
+  - story: "Start Conversation Deny Deny"
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_ask_if_user_knows_the_bot
+      - intent: deny
       - action: utter_explain_objective
-      - action: utter_ask_if_user_knows_user_story
+      - action: utter_ask_if_user_want_to_know_user_story
+      - intent: deny
+      - action: utter_ask_to_move_to_title_extraction
 
-  - story: "User knows User Story"
+  - story: "Start Conversation Agree Deny"
     steps:
-      - intent: affirm_user_knows_user_story
-      - action: utter_move_to_title_step
+      - intent: greet
+      - action: utter_greet
+      - action: utter_ask_if_user_knows_the_bot
+      - intent: agree
+      - action: utter_ask_if_user_want_to_know_user_story
+      - intent: deny
+      - action: utter_ask_to_move_to_title_extraction
 
-  - story: "User don't knows User Story"
+  - story: "Start Conversation Agree Deny"
     steps:
-      - intent: deny_user_knows_user_story
+      - intent: greet
+      - action: utter_greet
+      - action: utter_ask_if_user_knows_the_bot
+      - intent: agree
+      - action: utter_ask_if_user_want_to_know_user_story
+      - intent: agree
       - action: utter_explain_user_story
-      - action: utter_ask_if_user_understood_explanation
+      - action: utter_ask_to_move_to_title_extraction
+
+  - story: "Start Conversation Deny Agree"
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_ask_if_user_knows_the_bot
+      - intent: deny
+      - action: utter_explain_objective
+      - action: utter_ask_if_user_want_to_know_user_story
+      - intent: agree
+      - action: utter_explain_user_story
+      - action: utter_ask_to_move_to_title_extraction
 
   - story: "Extract User Story Title"
     steps:
-      - intent: start_extracting_user_story_title
-      - action: utter_ask_for_title
-      - action: user_story_form
-      - active_loop: user_story_form
+      - intent: start_title_extraction
+      - action: utter_ask_to_type_user_story_title
+      - action: title_form
+      - active_loop: title_form
       - slot_was_set:
         - requested_slot: user_story_title
       - active_loop: null
-      - action: utter_confirm_title
+      - action: utter_confirm_user_story_title
+      - action: utter_ask_to_edit_user_story_title
+
+  - story: "Extract User Story Description"
+    steps:
+      - intent: start_description_extraction
+      - action: utter_ask_to_type_user_story_description
+      - action: description_form
+      - active_loop: description_form
+      - slot_was_set:
+        - requested_slot: user_story_description
+      - active_loop: null
+      - action: utter_confirm_user_story_description
+      - action: utter_ask_to_edit_user_story_description
+
+  - story: "Extract User Story Acceptance Criteria"
+    steps:
+      - intent: start_acceptance_criteria_extraction
+      - action: utter_ask_to_type_user_story_acceptance_criteria
+      - action: acceptance_criteria_form
+      - active_loop: acceptance_criteria_form
+      - slot_was_set:
+        - requested_slot: user_story_acceptance_criteria
+      - active_loop: null
+      - action: utter_confirm_user_story_acceptance_criteria
+      - action: utter_ask_to_edit_user_story_acceptance_criteria

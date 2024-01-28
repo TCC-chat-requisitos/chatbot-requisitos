@@ -15,16 +15,47 @@ nlu:
       - start
       - yo
 
-  - intent: affirm_user_knows_user_story
+  - intent: agree
     examples: |
-      - I do know what a User Story is
-      - I understood what a User Story is
+      - yes
+      - yep
+      - yeah
+      - indeed
+      - that's right
+      - ok
+      - great
+      - sure
+      - absolutely
+      - for sure
+      - yes, please
+      - yes, of course
+      - yes, sure
 
-  - intent: deny_user_knows_user_story
+  - intent: deny
     examples: |
-      - No, I don't know what a User Story is
-      - No, I don't understood what a User Story is
+      - no
+      - nop
+      - nope
+      - nah
+      - not really
+      - no, thanks
+      - no, thank you
+      - no, I'm fine
+      - no, I'm good
 
-  - intent: start_extracting_user_story_title
+  - intent: start_title_extraction
     examples: |
-      - Yes, let's get started with the title
+      - yes, I want to start with the title
+      - Yes, I want to edit the title
+
+  - intent: start_description_extraction
+    examples: |
+      - Yes, I want to start with the description
+      - Yes, I want to edit the description
+      - No, I want to continue for the description
+
+  - intent: start_acceptance_criteria_extraction
+    examples: |
+      - Yes, I want to edit the acceptance criteria
+      - Yes, I want to start with the acceptance criteria
+      - No, I want to continue for the acceptance criteria
