@@ -13,6 +13,8 @@ intents:
   - start_description_extraction
   - start_acceptance_criteria_extraction
   - show_user_story
+  - know_about_user_story
+  - show_menu
 
 responses:
   utter_greet:
@@ -82,6 +84,22 @@ responses:
 
   utter_show_user_story:
   - text: "The User Story is: Title: '{user_story_title}', Description: '{user_story_description}', Acceptance Criteria: '{user_story_acceptance_criteria}'"
+
+  utter_menu:
+  - text: "What do you want to do?"
+    buttons:
+      - title: "Know more about User Story"
+        payload: "Know more about User Story"
+      - title: "Show the User Story"
+        payload: "Please, show me the full story"
+      - title: "Start creating a User Story"
+        payload: "Yes, I want to start with the title"
+      - title: "Create/Edit the title"
+        payload: "Yes, I want to edit the title"
+      - title: "Create/Edit the description"
+        payload: "Yes, I want to edit the description"
+      - title: "Create/Edit the acceptance criteria"
+        payload: "Yes, I want to edit the acceptance criteria"
 
 forms:
   title_form:

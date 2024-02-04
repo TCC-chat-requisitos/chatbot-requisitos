@@ -44,3 +44,13 @@ rules:
     steps:
       - intent: show_user_story
       - action: utter_show_user_story
+
+  - rule: "Show menu"
+    steps:
+      - intent: show_menu
+      - action: utter_menu
+
+  - rule: "Explain User Story"
+    steps:
+      - intent: know_about_user_story
+      - action: utter_explain_user_story

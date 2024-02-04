@@ -66,3 +66,16 @@ nlu:
       - Can you show me the full story?
       - Show me the full story
       - Full story
+  
+  - intent: show_menu
+    examples: |
+      - Menu
+      - Do you have a menu?
+      - I want to see the menu
+      - Show me the menu
+      - What do you have?
+
+  - intent: know_about_user_story
+    examples: |
+      - I want to know more about what a user story is
+      - Know more about User Story
