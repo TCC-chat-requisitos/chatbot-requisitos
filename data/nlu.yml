@@ -59,3 +59,10 @@ nlu:
       - Yes, I want to edit the acceptance criteria
       - Yes, I want to start with the acceptance criteria
       - No, I want to continue for the acceptance criteria
+
+  - intent: show_user_story
+    examples: |
+      - Please, show me the full story
+      - Can you show me the full story?
+      - Show me the full story
+      - Full story

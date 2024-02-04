@@ -39,3 +39,8 @@ rules:
       - active_loop: null
       - action: utter_confirm_user_story_acceptance_criteria
       - action: utter_ask_to_edit_user_story_acceptance_criteria
+
+  - rule: "Show user the full story"
+    steps:
+      - intent: show_user_story
+      - action: utter_show_user_story

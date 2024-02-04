@@ -12,6 +12,7 @@ intents:
   - start_title_extraction
   - start_description_extraction
   - start_acceptance_criteria_extraction
+  - show_user_story
 
 responses:
   utter_greet:
@@ -78,6 +79,9 @@ responses:
         payload: "Yes, I want to edit the acceptance criteria"
       - title: "No"
         payload: "No, I don't :)"
+
+  utter_show_user_story:
+  - text: "The User Story is: Title: '{user_story_title}', Description: '{user_story_description}', Acceptance Criteria: '{user_story_acceptance_criteria}'"
 
 forms:
   title_form:
