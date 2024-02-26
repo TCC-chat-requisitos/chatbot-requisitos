@@ -53,4 +53,8 @@ rules:
   - rule: "Explain User Story"
     steps:
       - intent: know_about_user_story
-      - action: utter_explain_user_story
+      - action: utter_introduction_user_story
+      - action: utter_explain_user_story_components
+      - action: utter_example_user_story
+      - action: utter_explain_acceptance_criteria_needed
+      - action: utter_explain_acceptance_criteria

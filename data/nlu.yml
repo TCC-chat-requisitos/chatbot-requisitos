@@ -79,3 +79,8 @@ nlu:
     examples: |
       - I want to know more about what a user story is
       - Know more about User Story
+      - Can you tell me about User Stories?
+      - I'm not sure what User Stories are, can you explain?
+      - What's the deal with User Stories?
+      - How do User Stories work?
+      - Could you explain the concept of User Stories?

@@ -30,7 +30,25 @@ responses:
   - text: "Do you want to know what is a User Story?"
 
   utter_explain_user_story:
-  - text: "A User Story is a description of a feature told from the perspective of the person who desires the new capability, usually a user or customer of the system. It is a tool used in Agile software development to capture a description of a software feature from an end-user perspective."
+  - text: "A User Story is like a short story that describes a specific feature or functionality of a software from the perspective of someone who will use it, like you! It's a way for us, as developers, to understand exactly what you need and why you need it. By focusing on your needs, we can create software that truly fits your requirements. It's a key part of how we work in Agile software development, ensuring that we build things that matter most to you."
+
+  utter_introduction_user_story:
+  - text: "Have you ever heard of a User Story before? It's like a little narrative that helps us understand what you want in the software. Let me break it down for you."
+
+  utter_explain_user_story_components:
+  - text: "A User Story typically has three main parts: the 'As a...' part, the 'I want to...' part, and the 'So that...' part. These parts help us understand who you are, what you need, and why you need it."
+
+  utter_example_user_story:
+  - text: "Let me give you an example of a User Story. It could be something like: 'As a customer, I want to be able to track my orders online, so that I can know when they will arrive.'"
+
+  utter_explain_acceptance_criteria_needed:
+  - text: "In order to ensure that we're building exactly what you need, every User Story needs acceptance criteria. Acceptance criteria outline the specific conditions that need to be met for the User Story to be considered complete. They help us make sure that we're all on the same page about what success looks like for each feature. So, when we're discussing a User Story, it's important to also define its acceptance criteria. This ensures that we deliver a product that meets your expectations!"
+
+  utter_explain_acceptance_criteria:
+  - text: "Acceptance criteria are like a checklist that helps us ensure that a feature meets your expectations. They define the conditions that must be satisfied for a User Story to be considered complete. Think of them as the 'must-haves' for a feature. For example, if we're building a login page, acceptance criteria might include things like 'User can enter their username and password,' 'Upon successful login, user is redirected to their dashboard,' and so on. They're crucial for making sure we deliver what you need!"
+
+  utter_check_understanding_user_story:
+  - text: "Does that make sense? User Stories might seem a bit strange at first, but they're really handy once you get the hang of them!"
 
   utter_ask_to_move_to_title_extraction:
   - text: "Do you want to start the User Story creation?"
